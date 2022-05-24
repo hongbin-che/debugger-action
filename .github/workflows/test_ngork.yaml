@@ -1,8 +1,11 @@
 name: Debugging with SSH
 on:
-  push:
-    branches:
-      - test_ngork
+  workflow_dispatch:
+  #watch:
+  #  types: started
+  repository_dispatch:
+    types: debug
+    
 jobs:
   build:
     runs-on: ubuntu-latest
